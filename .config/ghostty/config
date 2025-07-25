@@ -4,7 +4,7 @@ font-family = GeistMono Nerd Font Mono
 keybind = shift+enter=text:\n
 
 window-padding-x = 10
-window-padding-y = 10
+window-padding-y = 0
 window-padding-balance = true
 window-padding-color = extend
 
