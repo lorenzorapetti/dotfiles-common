@@ -24,6 +24,8 @@ if [ "$os" = darwin ]
     fish_add_path /opt/homebrew/opt/openjdk@17/bin $fish_user_paths
     fish_add_path /opt/homebrew/opt/openssl@1.1/bin
     fish_add_path /opt/homebrew/opt/libpq/bin
+else if [ "$os" = linux ]
+    alias hx='helix'
 end
 
 fish_add_path $PNPM_HOME $HOME/.yarn/bin $fish_user_paths
