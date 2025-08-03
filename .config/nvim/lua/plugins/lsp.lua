@@ -5,13 +5,13 @@ return {
       enabled = false,
     },
     servers = {
-      tailwindcss = {
-        settings = {
-          tailwindCSS = {
-            classFunctions = { "cn", "cva" },
-          },
-        },
-      },
+      -- tailwindcss = {
+      --   settings = {
+      --     tailwindCSS = {
+      --       classFunctions = { "cn", "cva" },
+      --     },
+      --   },
+      -- },
     },
   },
 }
