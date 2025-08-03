@@ -29,6 +29,7 @@ cursor-line = "error"
 
 [keys.normal]
 "C-." = "repeat_last_motion"
+S-d = "kill_to_line_end"
 tab = "move_parent_node_end"
 S-tab = "move_parent_node_start"
 S-h = "goto_previous_buffer"
