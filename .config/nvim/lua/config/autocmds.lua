@@ -40,3 +40,11 @@ vim.api.nvim_create_autocmd("User", {
   end,
   desc = "Disable single quote Rust",
 })
+
+-- Disable autoformat for lua files
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--   pattern = { "lua" },
+--   callback = function()
+--     vim.b.autoformat = false
+--   end,
+-- })
