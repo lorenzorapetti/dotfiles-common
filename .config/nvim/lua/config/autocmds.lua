@@ -14,31 +14,16 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
   end,
 })
 
-local rust_group = vim.api.nvim_create_augroup("Rust_disable_single_quote", { clear = true })
+local function augroup(name)
+  return vim.api.nvim_create_augroup("custom_" .. name, { clear = true })
+end
 
-vim.api.nvim_create_autocmd("FileType", {
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  group = augroup("rust_disable_single_quote_pairs"),
   pattern = "rust",
-  group = rust_group,
   callback = function()
-    if MiniPairs ~= nil then
-      MiniPairs.unmap("i", "'", "''")
-    end
+    vim.keymap.set("i", "'", "'", { buffer = 0 })
   end,
-  desc = "Disable single quote Rust",
-})
-
-vim.api.nvim_create_autocmd("User", {
-  pattern = "LazyLoad",
-  group = vim.api.nvim_create_augroup("Rust_disable_single_quote_lazyload", { clear = true }),
-  callback = function(event)
-    if event.data == "mini.pairs" then
-      vim.api.nvim_exec_autocmds("FileType", {
-        pattern = "rust",
-        group = rust_group,
-      })
-    end
-  end,
-  desc = "Disable single quote Rust",
 })
 
 -- Disable autoformat for lua files
